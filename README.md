@@ -9,19 +9,25 @@ Will be flying Africube transponder and Beacon on Bacar Balloon
     make # If this turns out good, continue
     sudo make install
     echo "hello world" | cwwav -f 700 -w 20 -o hello_world.wav
-# Creating image from Camera for SSTV
+# Creating image from pi Camera for SSTV
+    cd /home/pi/pySSTV
+    wget https://github.com/antonjan/Bacar_2021/raw/main/take_photo_from_camera.py
+    python3 /home/pi/pySSTV/take_photo_from_camera.py && echo " Picture taken"
     
-# Creating the SSTV transmition from gif.
+# Creating the SSTV transmition wav file from gif image.
     git clone https://github.com/dnet/pySSTV.git
     cd pySSTV
     python3 /home/pi/pySSTV/camera.py && echo " Picture taken"
     python3 -m pysstv --mode PD180 --fskid ZR6AIC --resize picture.jpg ./sstv-audio.wav
 
-
 # APRS / AFSK Telemetry transmistion.
-
+    sudo apt get install direwolf
+    
 
 # SDR gnuradio transponder.
+    cd 
+    sd sh
+    sudo ./start_gnuradio-companion.sh
 
 # APRS / AFSK transponder Controle.
 
