@@ -9,7 +9,14 @@ Will be flying Africube transponder and Beacon on Bacar Balloon
     make # If this turns out good, continue
     sudo make install
     echo "hello world" | cwwav -f 700 -w 20 -o hello_world.wav
+# Creating image from Camera for SSTV
+    
 # Creating the SSTV transmition from gif.
+    git clone https://github.com/dnet/pySSTV.git
+    cd pySSTV
+    python3 /home/pi/pySSTV/camera.py && echo " Picture taken"
+    python3 -m pysstv --mode PD180 --fskid ZR6AIC --resize picture.jpg ./sstv-audio.wav
+
 
 # APRS / AFSK Telemetry transmistion.
 
