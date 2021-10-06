@@ -21,6 +21,8 @@ Will be flying Africube transponder and Beacon on Bacar Balloon
     python3 -m pysstv --mode PD180 --fskid ZR6AIC --resize picture.jpg ./sstv-audio.wav
 
 # APRS / AFSK Telemetry transmistion.
+manual for direwolf https://raw.githubusercontent.com/wb2osz/direwolf/dev/doc/User-Guide.pdf
+raspberry pi direwolf document https://github.com/wb2osz/direwolf/raw/master/doc/Raspberry-Pi-APRS.pdf
     sudo apt get install direwolf
     
 
