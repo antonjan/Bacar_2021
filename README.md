@@ -33,5 +33,15 @@ raspberry pi direwolf document https://github.com/wb2osz/direwolf/raw/master/doc
 
 # APRS / AFSK transponder Controle.
 
+        git clone https://github.com/casebeer/afsk.git
+        cd afsk
+        sudo pip install afsk
+        sudo pip install --allow-external PyAudio --allow-unverified PyAudio PyAudio
+        sudo pip install  PyAudio --allow-unverified PyAudio PyAudio
+        sudo pip install  PyAudio PyAudio
+        afsk
+        aprs
+
+
 
 
