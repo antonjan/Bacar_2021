@@ -1,0 +1,289 @@
+options:
+  parameters:
+    author: root
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: test_rpitx
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Test Rpitx
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: low_pass_filter_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [561, 13]
+    rotation: 0
+    state: enabled
+- name: lpf_cutoff_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '30000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [26, 112]
+    rotation: 0
+    state: enabled
+- name: rx_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '435100000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [277, 77]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 48000*2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [186, 11]
+    rotation: 0
+    state: enabled
+- name: samp_rate_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '1248000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [286, 10]
+    rotation: 0
+    state: enabled
+- name: sdrplay_rx_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 14]
+    rotation: 0
+    state: enabled
+- name: tran_tx_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '145960000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [178, 82]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_range_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: sdrplay rf gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-30'
+    step: '1'
+    stop: '30'
+    value: '5'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [650, 328]
+    rotation: 0
+    state: true
+- name: variable_qtgui_range_0_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: lpf rf gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '1'
+    step: '1'
+    stop: '100'
+    value: '20'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [685, 165]
+    rotation: 0
+    state: true
+- name: low_pass_filter_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: lpf_cutoff_freq
+    decim: '1'
+    gain: variable_qtgui_range_0
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_ccf
+    width: samp_rate/32
+    win: firdes.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [481, 83]
+    rotation: 0
+    state: true
+- name: rpitx_rpitx_source_0
+  id: rpitx_rpitx_source
+  parameters:
+    affinity: ''
+    alias: ''
+    carrier_freq: tran_tx_freq
+    comment: ''
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [785, 37]
+    rotation: 0
+    state: enabled
+- name: soapy_source_0
+  id: soapy_source
+  parameters:
+    affinity: ''
+    agc0: 'False'
+    agc1: 'False'
+    alias: ''
+    amp_gain0: '0'
+    ant0: RX
+    ant1: RX2
+    args: driver=sdrplay
+    balance0: '0'
+    balance1: '0'
+    bw0: '0'
+    bw1: '0'
+    center_freq0: rx_freq
+    center_freq1: '0'
+    clock_rate: '0'
+    clock_source: ''
+    comment: ''
+    correction0: '0'
+    correction1: '0'
+    dc_offset0: '0'
+    dc_offset1: '0'
+    dc_removal0: 'False'
+    dc_removal1: 'True'
+    dev: driver=sdrplay
+    devname: custom
+    gain_mode0: Overall
+    gain_mode1: Overall
+    ifgr_gain: '59'
+    lna_gain0: '10'
+    lna_gain1: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mix_gain0: '10'
+    nchan: '1'
+    nco_freq0: '0'
+    nco_freq1: '0'
+    overall_gain0: variable_qtgui_range_0
+    overall_gain1: '10'
+    pga_gain0: '24'
+    pga_gain1: '24'
+    rfgr_gain: '9'
+    rxvga1_gain: '5'
+    rxvga2_gain: '0'
+    samp_rate: samp_rate
+    sdrplay_agc_setpoint: '-30'
+    sdrplay_biastee: 'False'
+    sdrplay_dabnotch: 'False'
+    sdrplay_if_mode: Zero-IF
+    sdrplay_rfnotch: 'False'
+    settings0: ''
+    settings1: ''
+    stream_args: ''
+    tia_gain0: '0'
+    tia_gain1: '0'
+    tune_args0: ''
+    tune_args1: ''
+    tuner_gain0: '10'
+    type: fc32
+    vga_gain0: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [186, 154]
+    rotation: 0
+    state: true
+- name: xmlrpc_server_0
+  id: xmlrpc_server
+  parameters:
+    addr: localhost
+    alias: ''
+    comment: ''
+    port: '8080'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [21, 177]
+    rotation: 0
+    state: true
+
+connections:
+- [low_pass_filter_0, '0', rpitx_rpitx_source_0, '0']
+- [soapy_source_0, '0', low_pass_filter_0, '0']
+
+metadata:
+  file_format: 1
