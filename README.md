@@ -1,7 +1,7 @@
 # Bacar_2021
 This will have the code for the BACAR Balloon flite 30 October 2021
 Will be flying Africube transponder and Beacon on Bacar Balloon
-
+![Africube](20210927_163502.jpg?raw=true "Africube")<br>
 # Creating CW Beacon Wav File using cwwav untility.
     sudo apt-get install libsndfile-dev
     cd /tmp && wget https://github.com/Kerrick/cwwav/archive/master.tar.gz --output-document cwwav.tar.gz
@@ -42,6 +42,15 @@ raspberry pi direwolf document https://github.com/wb2osz/direwolf/raw/master/doc
         afsk
         aprs
 
-
-
+Images
+![Africube](20210927_163454.jpg?raw=true "Africube")<br>
+![Africube](20210927_163441.jpg?raw=true "Africube")<br>
+![Africube](20210927_143742.jpg?raw=true "Africube")<br>
+![Africube](20210927_143736.jpg?raw=true "Africube")<br>
+![Africube](20210927_143728.jpg?raw=true "Africube")<br>
+![Africube](20210927_143717.jpg?raw=true "Africube")<br>
+![Africube](20210927_143707.jpg?raw=true "Africube")<br>
+![Africube](20210927_143656.jpg?raw=true "Africube")<br>
+![Africube](20210927_133130.jpg?raw=true "Africube")<br>
+![Africube](20210927_133123.jpg?raw=true "Africube")<br>
 
