@@ -2,6 +2,10 @@
 This will have the code for the BACAR Balloon flite 30 October 2021
 Will be flying Africube transponder and Beacon on Bacar Balloon
 ![Africube](20210927_163502.jpg?raw=true "Africube")<br>
+# Creating autostart for africube on startup addinding the following in sudo crontab -e.
+    
+    @reboot /home/pi/sh/start_africube_transponder.sh > /tmp/africube.log 2>&1
+
 # Creating CW Beacon Wav File using cwwav untility.
     sudo apt-get install libsndfile-dev
     cd /tmp && wget https://github.com/Kerrick/cwwav/archive/master.tar.gz --output-document cwwav.tar.gz
