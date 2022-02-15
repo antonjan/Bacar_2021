@@ -1,0 +1,701 @@
+options:
+  parameters:
+    author: root
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: africube_v1_with_beacon_xml_rpc
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: run
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Test Rpitx
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [9, 6]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: Beacom_mixer_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [473, 65]
+    rotation: 0
+    state: enabled
+- name: Beacom_overall_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [896, 18]
+    rotation: 0
+    state: enabled
+- name: Beacon_mod_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0.8'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [337, 66]
+    rotation: 0
+    state: enabled
+- name: LPF_rf_gain_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '9'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1145, 27]
+    rotation: 0
+    state: enabled
+- name: SDR_rf_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1031, 24]
+    rotation: 0
+    state: enabled
+- name: beacon_Preemphasis
+  id: variable
+  parameters:
+    comment: ''
+    value: '-1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [815, 418]
+    rotation: 0
+    state: true
+- name: beacon_deviation
+  id: variable
+  parameters:
+    comment: ''
+    value: 2.5e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [974, 424]
+    rotation: 0
+    state: true
+- name: beacon_int_phase
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [975, 349]
+    rotation: 0
+    state: true
+- name: beacon_offset
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [849, 348]
+    rotation: 0
+    state: true
+- name: beacon_offset_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '-24000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1122, 350]
+    rotation: 0
+    state: true
+- name: beacon_tau
+  id: variable
+  parameters:
+    comment: ''
+    value: 75e-6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [705, 417]
+    rotation: 0
+    state: true
+- name: low_pass_filter_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [477, 4]
+    rotation: 0
+    state: enabled
+- name: lpf_cutoff_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '20000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [26, 112]
+    rotation: 0
+    state: enabled
+- name: rx_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '435100000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [217, 77]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 48000*2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [35, 311]
+    rotation: 0
+    state: enabled
+- name: samp_rate_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '1248000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [212, 14]
+    rotation: 0
+    state: enabled
+- name: sdrplay_rx_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [334, 6]
+    rotation: 0
+    state: enabled
+- name: tran_tx_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '145970000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [17, 242]
+    rotation: 0
+    state: enabled
+- name: variable_qtgui_range_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: sdrplay rf gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '-30'
+    step: '1'
+    stop: '30'
+    value: '9'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [686, 360]
+    rotation: 0
+    state: disabled
+- name: variable_qtgui_range_0_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: lpf rf gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '1'
+    step: '1'
+    stop: '100'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 294]
+    rotation: 0
+    state: disabled
+- name: variable_qtgui_range_0_0_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Beacon mixer Gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0.001'
+    step: '0.001'
+    stop: '2'
+    value: '0.8'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [903, 27]
+    rotation: 0
+    state: disabled
+- name: variable_qtgui_range_0_0_0_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Beacon mod gain Gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0.001'
+    step: '0.001'
+    stop: '2'
+    value: '0.8'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1079, 31]
+    rotation: 0
+    state: disabled
+- name: variable_qtgui_range_0_0_0_0_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Beacon Gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0.001'
+    step: '0.001'
+    stop: '2'
+    value: '0.088'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1076, 19]
+    rotation: 0
+    state: disabled
+- name: analog_nbfm_tx_0
+  id: analog_nbfm_tx
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_rate: '48000'
+    comment: ''
+    fh: beacon_Preemphasis
+    max_dev: beacon_deviation
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    quad_rate: samp_rate
+    tau: beacon_tau
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [407, 131]
+    rotation: 0
+    state: true
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: Beacom_mixer_gain
+    comment: ''
+    freq: beacon_offset_freq
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: beacon_offset
+    phase: beacon_int_phase
+    samp_rate: samp_rate
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [662, 5]
+    rotation: 0
+    state: true
+- name: audio_source_0
+  id: audio_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: hw:2,1
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_outputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 168]
+    rotation: 0
+    state: enabled
+- name: band_pass_filter_0
+  id: band_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    decim: '1'
+    gain: '1'
+    high_cutoff_freq: '30000'
+    interp: '1'
+    low_cutoff_freq: '21000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_ccf
+    width: samp_rate/32
+    win: firdes.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [889, 90]
+    rotation: 0
+    state: true
+- name: blocks_add_xx_0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [814, 233]
+    rotation: 0
+    state: true
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [944, 338]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: Beacon_mod_gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [606, 242]
+    rotation: 0
+    state: true
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: Beacom_overall_gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1099, 169]
+    rotation: 0
+    state: true
+- name: blocks_multiply_xx_0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [731, 152]
+    rotation: 0
+    state: true
+- name: blocks_wavfile_source_0
+  id: blocks_wavfile_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    file: /home/pi/africube_software/test_audio.wav
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nchan: '1'
+    repeat: 'True'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [161, 187]
+    rotation: 0
+    state: disabled
+- name: low_pass_filter_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: lpf_cutoff_freq
+    decim: '1'
+    gain: LPF_rf_gain_0
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_ccf
+    width: samp_rate/32
+    win: firdes.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [565, 289]
+    rotation: 0
+    state: true
+- name: rpitx_rpitx_source_0
+  id: rpitx_rpitx_source
+  parameters:
+    affinity: ''
+    alias: ''
+    carrier_freq: tran_tx_freq
+    comment: ''
+    samp_rate: samp_rate
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1055, 246]
+    rotation: 0
+    state: enabled
+- name: soapy_source_0
+  id: soapy_source
+  parameters:
+    affinity: ''
+    agc0: 'False'
+    agc1: 'False'
+    alias: ''
+    amp_gain0: '0'
+    ant0: RX
+    ant1: RX2
+    args: driver=sdrplay
+    balance0: '0'
+    balance1: '0'
+    bw0: '0'
+    bw1: '0'
+    center_freq0: rx_freq
+    center_freq1: '0'
+    clock_rate: '0'
+    clock_source: ''
+    comment: ''
+    correction0: '0'
+    correction1: '0'
+    dc_offset0: '0'
+    dc_offset1: '0'
+    dc_removal0: 'False'
+    dc_removal1: 'True'
+    dev: driver=sdrplay
+    devname: custom
+    gain_mode0: Overall
+    gain_mode1: Overall
+    ifgr_gain: '59'
+    lna_gain0: '10'
+    lna_gain1: '10'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mix_gain0: '10'
+    nchan: '1'
+    nco_freq0: '0'
+    nco_freq1: '0'
+    overall_gain0: SDR_rf_gain
+    overall_gain1: '10'
+    pga_gain0: '24'
+    pga_gain1: '24'
+    rfgr_gain: '9'
+    rxvga1_gain: '5'
+    rxvga2_gain: '0'
+    samp_rate: samp_rate
+    sdrplay_agc_setpoint: '-30'
+    sdrplay_biastee: 'False'
+    sdrplay_dabnotch: 'False'
+    sdrplay_if_mode: Zero-IF
+    sdrplay_rfnotch: 'False'
+    settings0: ''
+    settings1: ''
+    stream_args: ''
+    tia_gain0: '0'
+    tia_gain1: '0'
+    tune_args0: ''
+    tune_args1: ''
+    tuner_gain0: '10'
+    type: fc32
+    vga_gain0: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [268, 264]
+    rotation: 0
+    state: true
+- name: xmlrpc_server_0
+  id: xmlrpc_server
+  parameters:
+    addr: 127.0.0.1
+    alias: ''
+    comment: ''
+    port: '8008'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [21, 174]
+    rotation: 0
+    state: enabled
+- name: zeromq_pull_msg_source_0
+  id: zeromq_pull_msg_source
+  parameters:
+    address: tcp://localhost:50241
+    affinity: ''
+    alias: ''
+    bind: 'False'
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    timeout: '100'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [618, 364]
+    rotation: 0
+    state: disabled
+
+connections:
+- [analog_nbfm_tx_0, '0', blocks_multiply_const_vxx_0, '0']
+- [analog_sig_source_x_0, '0', blocks_multiply_xx_0, '0']
+- [audio_source_0, '0', analog_nbfm_tx_0, '0']
+- [band_pass_filter_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [blocks_add_xx_0, '0', rpitx_rpitx_source_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_multiply_xx_0, '1']
+- [blocks_multiply_const_vxx_0_0, '0', blocks_add_xx_0, '0']
+- [blocks_multiply_xx_0, '0', band_pass_filter_0, '0']
+- [blocks_wavfile_source_0, '0', analog_nbfm_tx_0, '0']
+- [low_pass_filter_0, '0', blocks_add_xx_0, '1']
+- [soapy_source_0, '0', low_pass_filter_0, '0']
+- [zeromq_pull_msg_source_0, out, blocks_message_debug_0, print]
+
+metadata:
+  file_format: 1
